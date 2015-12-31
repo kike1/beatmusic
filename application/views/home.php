@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Bootstrap Sidebar</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="<?php echo base_url("assets/css/styles.css"); ?>" rel="stylesheet">
-	</head>
-	<body>
-
-<header class="navbar navbar-inverse" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">BeatMusic</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Tienda</a>
-        </li>
-        <li>
-          <a href="#">Escuchar</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- Begin Body -->
 <div class="container">
-	<div class="row">
+    <div class="row">
 
     <div class="col-md-9" id="leftCol">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -182,11 +141,6 @@
                 eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
                 sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
                 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-              
-              
-                <hr>
-              <h4><a href="http://bootply.com/100993">Edit on Bootply</a></h4>
-                <hr>    
                 
         </div> 
 
@@ -203,14 +157,5 @@
 
         </div> 
     </div> 
-      		
+            
 </div>
-
-
-
-	<!-- script references -->
-		<script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
-		<script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
-		<script src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>
-	</body>
-</html>

@@ -51,18 +51,32 @@
                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
                   </ol>
 
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="<?php echo base_url("assets/imgs/12951012.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/12951008.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>
                     </div>
                     <div class="item">
-                      <img src="<?php echo base_url("assets/imgs/12951008.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/12951009.jpg"); ?>" alt="...">
+                      <div class="carousel-caption">
+                        ...
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="<?php echo base_url("assets/imgs/12951011.jpg"); ?>" alt="...">
+                      <div class="carousel-caption">
+                        ...
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="<?php echo base_url("assets/imgs/12951012.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>

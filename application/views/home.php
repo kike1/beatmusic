@@ -75,12 +75,12 @@
                 
               
               
-                <h2 id="sec1">Content</h2>
-                <p>
-                Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
+                <h2 id="sec1">BeatMusic, ¿Qué es?</h2>
+                <p>  
+              Es una aplicación para la asignatura de Programación Web del Grado de Ingeniería Informática de la UCA realizada con CodeIgniter.
+              Simula una tienda de música donde se puede escuchar y comprar música (de manera ficticia).
                 </p>
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-md-6">
                     <div class="panel panel-default">
                       <div class="panel-heading"><h3>Hello.</h3></div>
@@ -101,46 +101,31 @@
                       </div>
                     </div>
                   </div>  
-                </div>
+                </div> -->
               
                 <hr>
               
-                <h2 id="sec2">Section 2</h2>
-                <p>
-                Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
-                </p>
+                <h2 id="sec2">Nuevo</h2>
                 <div class="row">
-                  <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                    <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                    <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
+                <ul class="new-items-group">
+                  <li class="item">
+                    
+                  </li>
+                </ul>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
+                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
+
                 </div>
               
                 <hr>
-              
-                <h2 id="sec3">Section 3</h2>
-            Images are responsive sed @mdo but sum are more fun peratis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut..
-                <br>
-                Fos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut..
-              
-              
-                <h2 id="sec4">Section 4</h2>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
-                eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
                 
         </div> 
 

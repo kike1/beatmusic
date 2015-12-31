@@ -1,11 +1,44 @@
+body{
+    background-color: #1c1c1c;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #121314;
+}
 header {
 	margin-bottom:30px;
 }
 
 .navbar-nav>li>a{
-    color: white !important;
+    color: #dfe0e6 !important;/*white !important;*/
+    font-weight: 400;
+    font-size: 16px;
 }
 
+.navbar-nav>li>a:hover{
+    color: white !important;
+}
 .navbar-header{
     border-right: solid 1px white;
+}
+
+a.list-group-item.active{
+    font-size: 20px;
+    color: #000 !important;
+    background-color: #F7F72B !important;   
+    border-color: #1C1C1F;
+}
+a.list-group-item.active:hover{
+    color: #000 !important;
+}
+
+.list-group-item{
+    color: #dfe0e6 !important;
+    background-color: #1C1C1F;
+}
+
+a.list-group-item:hover, a.list-group-item:focus{
+    color: #FFF !important;
+    background-color: #2C2C2C;
 }

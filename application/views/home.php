@@ -72,47 +72,29 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-                
               
-              
-                <h2 id="sec1">BeatMusic, ¿Qué es?</h2>
+                <h2 id="sec1">¿Qué es BeatMusic?</h2>
                 <p>  
               Es una aplicación para la asignatura de Programación Web del Grado de Ingeniería Informática de la UCA realizada con CodeIgniter.
               Simula una tienda de música donde se puede escuchar y comprar música (de manera ficticia).
                 </p>
-                <!-- <div class="row">
-                  <div class="col-md-6">
-                    <div class="panel panel-default">
-                      <div class="panel-heading"><h3>Hello.</h3></div>
-                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                      Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                      dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                      Aliquam in felis sit amet augue.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="panel panel-default">
-                      <div class="panel-heading"><h3>Hello.</h3></div>
-                      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                      Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                      dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                      Aliquam in felis sit amet augue.
-                      </div>
-                    </div>
-                  </div>  
-                </div> -->
-              
+            
+
                 <hr>
               
                 <h2 id="sec2">Nuevo</h2>
                 <div class="row">
                 <ul class="new-items-group">
-                  <li class="item">
-                    
+                  <li class="item col-md-2">
+                    <img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive">
+                    <div class="item-info">
+                      Track<br>
+                      Autor<br>
+                      Label<br>
+                    </div>
                   </li>
                 </ul>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
+                  
                   <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
                   <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
                   <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
@@ -130,14 +112,21 @@
         </div> 
 
         <div class="col-md-3">        
-            <div class="well"> 
-              TOP 10
-                  <ul class="nav nav-stacked" id="sidebar">
-                    <li><a href="#sec1">Section 1</a></li>
-                    <li><a href="#sec2">Section 2</a></li>
-                    <li><a href="#sec3">Section 3</a></li>
-                    <li><a href="#sec4">Section 4</a></li>
-                  </ul>
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                TOP 10
+              </a>
+              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item">Morbi leo risus</a>
+              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item">Vestibulum at eros</a>
+              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item">Morbi leo risus</a>
+              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item">Vestibulum at eros</a>
+              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item">Morbi leo risus</a>
+              
             </div>
 
         </div> 

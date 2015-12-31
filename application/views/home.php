@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 70px;">
     <div class="row">
 
     <div class="col-md-9" id="leftCol">
@@ -106,8 +106,6 @@
                   <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
 
                 </div>
-              
-                <hr>
                 
         </div> 
 

@@ -15,7 +15,7 @@
           <a href="#">Tienda</a>
         </li>
         <li>
-          <a href="#">Escuchar</a>
+          <a href="<?= base_url()?>escuchar">Escuchar</a>
         </li>
       </ul>
     </nav>

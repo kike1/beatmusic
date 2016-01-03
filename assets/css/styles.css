@@ -42,3 +42,29 @@ a.list-group-item:hover, a.list-group-item:focus{
     color: #FFF !important;
     background-color: #2C2C2C;
 }
+
+/* nuevos tracks */
+.new-items-group{
+    list-style:none;
+    padding-left: 8px;
+}
+
+.new-items-group>li{
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.new-items-group li:hover{
+    background-color: #2C2C2C;
+}
+
+.new-items-group>li>img{
+    margin-bottom: 5px;
+}
+
+.item-info > a{
+    color: white;
+    text-decoration: underline;
+}
+
+/* / nuevos tracks */

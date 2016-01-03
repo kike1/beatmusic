@@ -81,72 +81,14 @@
             
 
                 <hr>
-              
+                <!-- Nuevos tracks -->
                 <h2 id="sec2">Nuevo</h2>
-                <div class="row">
-                <ul class="new-items-group">
                 <?= $newitems; ?>
-                  <?php
-                  
-                  // foreach ($data['allTracks']->result() as $row)
-                  // {
-                  //         echo $row->nombre;
-                  //         echo $row->id_album;
-                  //         echo $row->likes;
-                  // }
-                  // while ($fila = mysql_fetch_array($datos_vista)){
-                  //   echo '<li class="item col-md-2">
-                  //           <img src="' .base_url('assets/imgs/tracks/12680829.jpg'). ' " class="img-responsive">
-                  //           <div class="item-info">
-                  //             '.$fila["nombre"].'<br>
-                  //             Autor<br>
-                  //             Label<br>
-                  //           </div>    
-                  //         </li>';
-                  // }
-                  ?>
-                  <!-- <li class="item col-md-2">
-                    <img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive">
-                    <div class="item-info">
-                      Track<br>
-                      Autor<br>
-                      Label<br>
-                    </div>
-                  </li> -->
-                </ul>
-                  
-                  <!-- <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12774914.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12804537.jpg') ?>" class="img-responsive"></div>
-                  <div class="col-md-2"><img src="<?php echo base_url('assets/imgs/tracks/12680829.jpg') ?>" class="img-responsive"></div> -->
-
-                </div>
-                
         </div> 
 
+        <!-- TOP 10 -->
         <div class="col-md-3">        
-            <div class="list-group">
-              <a href="#" class="list-group-item active">
-                TOP 10
-              </a>
-              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-              <a href="#" class="list-group-item">Morbi leo risus</a>
-              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-              <a href="#" class="list-group-item">Vestibulum at eros</a>
-              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-              <a href="#" class="list-group-item">Morbi leo risus</a>
-              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-              <a href="#" class="list-group-item">Vestibulum at eros</a>
-              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-              <a href="#" class="list-group-item">Morbi leo risus</a>
-              
-            </div>
-
+          <?= $topTenItems ?>
         </div> 
     </div> 
             

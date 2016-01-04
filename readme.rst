@@ -6,11 +6,4 @@ Es una aplicación para la asignatura de Programación Web del Grado de Ingenier
 
 Simula una tienda de música donde se puede escuchar y comprar música (de manera ficticia).
 
-*******************
-Autores
-*******************
-
-Daniel Cabrera
-Enrique Gómez
-Manuel Venega
 

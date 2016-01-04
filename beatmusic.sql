@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 03, 2016 at 11:53 PM
+-- Generation Time: Jan 04, 2016 at 12:27 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -24,7 +24,7 @@ CREATE TABLE `album` (
 `id` int(11) NOT NULL,
   `id_artista` int(11) NOT NULL,
   `nombre` varchar(256) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `album`
@@ -32,7 +32,9 @@ CREATE TABLE `album` (
 
 INSERT INTO `album` (`id`, `id_artista`, `nombre`) VALUES
 (1, 1, 'album1'),
-(2, 2, 'album2');
+(2, 2, 'album2'),
+(3, 0, 'album3'),
+(4, 0, 'album4');
 
 -- --------------------------------------------------------
 
@@ -97,14 +99,14 @@ CREATE TABLE `artista_cancion` (
 
 INSERT INTO `artista_cancion` (`id_artista`, `id_cancion`) VALUES
 (1, 1),
-(1, 3),
-(1, 5),
 (2, 2),
+(1, 3),
 (2, 4),
+(1, 5),
 (2, 6),
 (3, 6),
-(3, 8),
 (4, 7),
+(3, 8),
 (4, 9);
 
 -- --------------------------------------------------------
@@ -187,7 +189,8 @@ CREATE TABLE `tipousuario` (
 CREATE TABLE `usuario` (
 `id` int(11) NOT NULL,
   `nick` varchar(64) NOT NULL,
-  `password` varchar(512) NOT NULL
+  `password` varchar(512) NOT NULL,
+  `tipo` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -210,19 +213,19 @@ ALTER TABLE `artista`
 -- Indexes for table `artista_album`
 --
 ALTER TABLE `artista_album`
- ADD PRIMARY KEY (`id_artista`,`id_album`);
+ ADD PRIMARY KEY (`id_artista`,`id_album`), ADD KEY `id_artista` (`id_artista`,`id_album`);
 
 --
 -- Indexes for table `artista_cancion`
 --
 ALTER TABLE `artista_cancion`
- ADD PRIMARY KEY (`id_artista`,`id_cancion`);
+ ADD PRIMARY KEY (`id_artista`,`id_cancion`), ADD KEY `id_artista` (`id_artista`,`id_cancion`), ADD KEY `id_cancion` (`id_cancion`);
 
 --
 -- Indexes for table `cancion`
 --
 ALTER TABLE `cancion`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id_album` (`id_album`);
 
 --
 -- Indexes for table `sello`
@@ -234,7 +237,7 @@ ALTER TABLE `sello`
 -- Indexes for table `sello_artista`
 --
 ALTER TABLE `sello_artista`
- ADD PRIMARY KEY (`id_sello`,`id_artista`);
+ ADD PRIMARY KEY (`id_sello`,`id_artista`), ADD KEY `id_sello` (`id_sello`,`id_artista`), ADD KEY `id_artista` (`id_artista`);
 
 --
 -- Indexes for table `tipousuario`
@@ -256,7 +259,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `artista`
 --
@@ -282,3 +285,26 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `usuario`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `artista_album`
+--
+ALTER TABLE `artista_album`
+ADD CONSTRAINT `artista_album_ibfk_1` FOREIGN KEY (`id_artista`) REFERENCES `artista` (`id`);
+
+--
+-- Constraints for table `artista_cancion`
+--
+ALTER TABLE `artista_cancion`
+ADD CONSTRAINT `artista_cancion_ibfk_2` FOREIGN KEY (`id_cancion`) REFERENCES `cancion` (`id`),
+ADD CONSTRAINT `artista_cancion_ibfk_1` FOREIGN KEY (`id_artista`) REFERENCES `artista` (`id`);
+
+--
+-- Constraints for table `sello_artista`
+--
+ALTER TABLE `sello_artista`
+ADD CONSTRAINT `sello_artista_ibfk_2` FOREIGN KEY (`id_artista`) REFERENCES `artista` (`id`),
+ADD CONSTRAINT `sello_artista_ibfk_1` FOREIGN KEY (`id_sello`) REFERENCES `sello` (`id`);

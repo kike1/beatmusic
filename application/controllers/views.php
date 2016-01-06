@@ -1,29 +1,37 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Views extends CI_Controller {
-
-   var $template  = array();
-   var $data      = array();
-
+class Views extends MY_Controller {
+  function __construct()
+ {
+   parent::__construct();
+   $this->session;
+   $this->load->helper(array('form'));
+ }  
   public function index() {
 
+    //newtracks
     $this->load->model('Track');
-
     $allTracks = $this->Track->getNewTracks();
     $this->data["allTracks"] = $allTracks;
     $newitems = $this->load->view('layout/newitems', $this->data, true);
-    $this->data["newitems"] = $newitems;
+    $this->session->newitems = $newitems;
 
+    //topten
     $topTenResult = $this->Track->topTen();
     $this->data["topten"] = $topTenResult;
     $topTen = $this->load->view('layout/topten', $this->data, true);
-    $this->data["topTenItems"] = $topTen;
-    
+    $this->session->topTenItems = $topTen;
 
     $this->middle = 'home';
-    $this->template['header'] = $this->load->view('layout/header', $this->data, true);
-    $this->template['middle'] = $this->load->view($this->middle, $this->data, true);
-    $this->template['footer'] = $this->load->view('layout/footer', $this->data, true);
-    $this->load->view('layout/index', $this->template);
+    $this->layout();
   }
+
+  function logout()
+ {
+   $this->session->unset_userdata('logged_in');
+   session_destroy();
+   $this->session->set_flashdata('msg', 'Has cerrado sesión correctamente');
+   $this->middle = 'home';
+   $this->layout();
+ }
 
 }

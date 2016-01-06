@@ -1,13 +1,7 @@
 <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <!-- <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button> -->
-      <a href="index.php" class="navbar-brand"><img src="assets/imgs/logobeatmusic.png"></a>
+      <a href="<?= base_url()?>" class="navbar-brand"><img src="<?=base_url('assets/imgs/logobeatmusic.png')?>"></a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav" style="padding-left: 10px;">
@@ -17,65 +11,108 @@
         <li>
           <a href="<?= base_url()?>escuchar">Escuchar</a>
         </li>
+        
       </ul>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch demo modal
-      </button>
+      <ul class="nav navbar-nav" style="float: right;">
+        <li style="float: right;">
+          <?php if($this->session->userdata('logged_in')) { 
+                    echo '<div style="margin-top:10px;">Hola, '.$this->session->username.'. </div><a name="logout" style="padding: 5px;" href="views/logout">Logout</a>';
+                }else{ ?>
+                  <div style="padding-top:10px;">
+                    <a href="#" data-toggle="modal" data-target="#loginModal">Login</a>/
+                    <a href="#" data-toggle="modal" data-target="#registerModal">Registrarse</a>    
+                  </div>
+                  
+          <?php }?>
+          
+        </li>
+      </ul>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+
+      <!--login modal-->
+      <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+         <?php echo form_open('verifylogin'); ?>
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h1 class="text-center">Login</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="form col-md-12 center-block">
+                      
+                        <?php if(validation_errors()){ 
+                          echo '<div class="alert alert-danger">';
+                                echo validation_errors();
+                          echo '</div>';
+                          } ?>
+                      
+                      <div class="form-group inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input name="username" value="<?php echo set_value('username'); ?>" type="text" class="form-control input-lg" placeholder="Usuario">
+                      </div>
+                      <div class="form-group inner-addon left-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input name="password" value="<?php echo set_value('password'); ?>" type="password" class="form-control input-lg" placeholder="Contraseña">
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block">Login</button>
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>  
+                </div>
             </div>
-            <div class="modal-body">
-              ...
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-        <ul id="login-dp" class="dropdown-menu">
-          <li>
-             <div class="row">
-                <div class="col-md-12">
-                   <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                      <div class="form-group">
-                         <label class="sr-only" for="exampleInputEmail2">Usuario</label>
-                         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Usuario" required>
-                      </div>
-                      <div class="form-group">
-                         <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
-                                               <div class="help-block text-right"><a href="">¿Contraseña olvidada?</a></div>
-                      </div>
-                      <div class="form-group">
-                         <button type="submit" class="btn btn-primary btn-block">Login</button>
-                      </div>
-                      <div class="checkbox">
-                         <label>
-                         <input type="checkbox"> Recuérdame
-                         </label>
-                      </div>
-                   </form>
+
+      <!--registro modal-->
+      <div id="registerModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+         <?php echo form_open('register'); ?>
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h1 class="text-center">Registro</h1>
                 </div>
-                <div class="bottom text-center">
-                  ¿Eres nuevo? <a href="#"><b>Regístrate</b></a>
+                <div class="modal-body">
+                    <form class="form col-md-12 center-block">
+                        <?php if(validation_errors()){ 
+                          echo '<div class="alert alert-danger">';
+                                echo validation_errors();
+                          echo '</div>';
+                          } ?>
+                      
+                      <div class="form-group inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        
+                        <input name="username" type="text" class="form-control input-lg" placeholder="Usuario">
+                      </div>
+                      <div class="form-group inner-addon left-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input name="password" type="password" class="form-control input-lg" placeholder="Contraseña">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <input name="password" type="password" class="form-control input-lg" placeholder="Repita contraseña">
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block">Aceptar</button>
+                        <!-- <span class="pull-right"><a href="#">Registrarse</a></span> -->
+                      </div>
+                    </form>
                 </div>
-             </div>
-          </li>
-      </ul>
-    </li>
-  </ul> -->
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>  
+                </div>
+            </div>
+            </div>
+        </form>
+      </div>
     </nav>
 
     

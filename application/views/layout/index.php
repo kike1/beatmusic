@@ -18,7 +18,25 @@
 
 		<!-- script references -->
 		<script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
-		<script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
 		<script src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>
+		<script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
+
+		<script type='text/javascript'>
+		  // assumes you're using jQuery
+		  $(document).ready(function() {
+		    $('.alert').hide();
+		    <?php if($this->session->flashdata('msg')){ ?> 
+		          <?php if($this->session->errorlogin){ ?>
+		              $('.alert').addClass("alert-danger");
+		              //$('#loginModal').modal('show')
+		          <?php } ?>
+		              
+		              $('.alert').addClass("alert-success");
+
+		    $('.alert').html('<?= $this->session->flashdata('msg')?>').fadeIn(1500);
+		    <?php } ?>
+		  });
+		  
+		</script>
 	</body>
 </html>

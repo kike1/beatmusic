@@ -1,4 +1,10 @@
+
 <div class="container" style="margin-top: 70px;">
+
+<div class="alert">
+
+</div>
+
     <div class="row">
 
     <div class="col-md-9" id="leftCol">
@@ -83,12 +89,12 @@
                 <hr>
                 <!-- Nuevos tracks -->
                 <h2 id="sec2">Nuevo</h2>
-                <?= $newitems; ?>
+                <?= $this->session->newitems; ?>
         </div> 
 
         <!-- TOP 10 -->
         <div class="col-md-3">        
-          <?= $topTenItems ?>
+          <?= $this->session->topTenItems ?>
         </div> 
     </div> 
             

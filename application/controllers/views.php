@@ -3,7 +3,7 @@ class Views extends MY_Controller {
   function __construct()
  {
    parent::__construct();
-   $this->session;
+   //$this->session;
    $this->load->helper(array('form'));
  }  
   public function index() {

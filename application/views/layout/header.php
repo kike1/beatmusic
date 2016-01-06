@@ -18,8 +18,9 @@
           <?php if($this->session->userdata('logged_in')) { 
                     echo '<div style="margin-top:10px;">Hola, '.$this->session->username.'. </div><a name="logout" style="padding: 5px;" href="views/logout">Logout</a>';
                 }else{ ?>
-                  <div style="padding-top:10px;">
-                    <a href="#" data-toggle="modal" data-target="#loginModal">Login</a>/
+                  <div style="padding-top:15px;">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <a href="#" data-toggle="modal" data-target="#loginModal">Iniciar sesión</a>/
                     <a href="#" data-toggle="modal" data-target="#registerModal">Registrarse</a>    
                   </div>
                   

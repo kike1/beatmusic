@@ -90,7 +90,7 @@
         <div class="col-md-12">
 	        <h2 id="sec1">ARTISTAS</h2>      
 	                <hr>
-	        <h2 id="sec2">ALMUNS</h2>
+	        <h2 id="sec2">ALBUMS</h2>
         </div>
     </div>        
 </div>

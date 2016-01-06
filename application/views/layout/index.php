@@ -15,7 +15,7 @@
 		 <?php if($header) echo $header; ?>
 		 <?php if($middle) echo $middle; ?>
 		 <?php if($footer) echo $footer; ?>
-
+		 
 		<!-- script references -->
 		<script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
 		<script src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>

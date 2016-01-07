@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
 			redirect(base_url().'login');
 		}*/
 		$data['titulo'] = 'Bienvenido Administrador';
-		$this->load->view('layout/admin_view',$data);
+		$this->load->view('admin_view',$data);
 	}
 }
 

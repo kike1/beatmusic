@@ -34,7 +34,7 @@
       
       <header class="header dark-bg">
             <!--logo start-->
-            <a href="index.html" class="logo">Administrador</a>
+            <a class="logo">Administrador</a>
             <!--logo end-->
       </header>      
       <!--header end-->
@@ -44,17 +44,17 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
-                  <li class="active">
-                      <a href="#">
+                  <li>
+                      <a href="<?= base_url()?>crear_artista">
                           <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
-				          <li class="active">
+				          <li>
                       <a href="#">
                           <span class="glyphicon glyphicon-music" aria-hidden="true"> Añadir canción</span>
                       </a>
                   </li>
-                  <li class="active">
+                  <li>
                       <a href="#">
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"> Añadir sello</span>
                       </a>

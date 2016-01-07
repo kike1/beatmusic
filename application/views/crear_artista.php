@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Administrador</title>
+    <title>Crear artista</title>
 
     <!-- Bootstrap CSS -->    
    <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -85,31 +85,30 @@
                     Crear artista
                   </header>
                   <div class="panel-body">
+                    <?php echo form_open('admin/insertar_artista'); ?>
                     <form class="form-horizontal " method="get">
                       <div class="form-group">
                         <label class="col-sm-2 control-label">Nombre <span class="required">*</span></label>
                           <div class="col-sm-10">
-                            <input type="text" id="cnombre" name="nombre" class="form-control" required>
+                            <input type="text" id="cnombre" name="nombre" value="<?php echo set_value('nombre'); ?>" class="form-control" required>
                           </div>
                       </div>
                       <div class="form-group">
                           <label for="insertarImagen">Imagen</label>
-                          <input type="file" id="insertarImagen">
+                          <input type="file" id="insertarImagen" name="userfile">
                           <p class="help-block">Inserte la imagen del artista.</p>
                       </div>
                       <div class="form-group ">
                           <label for="descripcion" class="control-label col-lg-2">Descripción <span class="required">*</span></label>
                           <div class="col-lg-10">
-                              <textarea class="form-control " id="cdescripcion" name="descripcion" required></textarea>
+                              <textarea class="form-control " id="cdescripcion" name="descripcion" value="<?php echo set_value('descripcion'); ?>" required></textarea>
                           </div>
                       </div>
                       <div class="form-group">
                           <div class="col-lg-offset-2 col-lg-10">
-                              <button class="btn btn-primary" type="submit">Save</button>
-                              <button class="btn btn-default" type="button">Cancel</button>
+                              <button class="btn btn-primary" type="submit">Crear</button>
                           </div>
                       </div>
-
                     </form>
                   </div>
                 </section>
@@ -126,7 +125,8 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- jquery validate js -->
   <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-
+  <!-- custom form component script for this page-->
+  <script src="js/form-component.js"></script>
   <!-- custom form validation script for this page-->
   <script src="js/form-validation-script.js"></script>
   <!--custome script for all page-->

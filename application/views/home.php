@@ -1,4 +1,3 @@
-
 <div class="container" style="margin-top: 70px;">
 
 <div class="alert">
@@ -66,7 +65,7 @@
                     </div>
 
 
-                  </div>
+                  </div>º
 
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

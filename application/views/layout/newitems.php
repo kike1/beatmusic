@@ -7,8 +7,8 @@
           echo '<img src="'.$urlimg.'" class="img-responsive img-thumbnail">';
           echo '<div class="item-info">';
              echo $row->track. '<br>';
-             echo '<a href=/artista/'.$row->artista.'>'.$row->artista.'</a> <br>';
-             echo '<a href=/album/'.$row->album.'>'.$row->album.'</a> <br>';
+             echo '<a href=/beatmusic/escuchar/artista/'.$row->artista.'>'.$row->artista.'</a> <br>';
+             echo '<a href=/beatmusic/sello/'.$row->sello.'>'.$row->sello.'</a> <br>';
           echo '</div>
              </li>';
     }

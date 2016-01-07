@@ -7,12 +7,12 @@ class Track extends CI_Model {
 
     function getNewTracks(){
         $query = $this->db->query("SELECT cancion.img as img, cancion.nombre as track, 
-                                            album.nombre as album, artista.nombre as artista
+                                            sello.nombre as sello, artista.nombre as artista
                                     FROM cancion
-                                    INNER JOIN album
-                                    ON cancion.id_album = album.id
+                                    INNER JOIN sello
+                                    ON sello.id = cancion.id_sello
                                     INNER JOIN artista
-                                    ON artista.id = album.id_artista
+                                    ON artista.id = cancion.id_artista
                                     ORDER BY cancion.fecha_creacion DESC LIMIT 10"); 
         return $query;
     } 

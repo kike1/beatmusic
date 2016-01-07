@@ -5,6 +5,7 @@ class Escuchar extends MY_Controller {
        parent::__construct();
        //$this->session;
        $this->load->helper(array('form'));
+       $this->load->model('Artista_model','artista');
      }  
 
 
@@ -25,5 +26,18 @@ class Escuchar extends MY_Controller {
     $this->middle = 'escuchar';
     $this->layout();
   }
+
+  function artista($nombre)
+   {
+     $this->load->library('form_validation');
+     $this->load->helper('security');
+
+     $this->session->artistav = $this->artista->getArtista($nombre);
+     $this->session->tracks = $this->artista->getTracks($nombre);
+
+     $this->middle = 'artista'; 
+     $this->layout();
+      
+   }
   
 }

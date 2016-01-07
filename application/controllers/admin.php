@@ -10,10 +10,10 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		if($this->session->userdata('tipo') == FALSE || $this->session->tipo != 'administrador')
+		/*if($this->session->userdata('tipo') == FALSE || $this->session->tipo != 'administrador')
 		{
 			redirect(base_url().'login');
-		}
+		}*/
 		$data['titulo'] = 'Bienvenido Administrador';
 		$this->load->view('layout/admin_view',$data);
 	}

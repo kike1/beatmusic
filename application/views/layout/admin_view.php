@@ -17,24 +17,12 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <!-- bootstrap theme -->
     <link href="<?php echo base_url("assets/css/bootstrap-theme.css"); ?>" rel="stylesheet">
-    <!--external css-->
     <!-- font icon -->
     <link href="<?php echo base_url("assets/css/elegant-icons-style.css"); ?>" rel="stylesheet" />
     <link href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>" rel="stylesheet" />    
-    <!-- full calendar css-->
-   <!--  <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-	<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" /> -->
-    <!-- easy pie chart-->
-    <!-- <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/> -->
-    <!-- owl carousel -->
-    <!-- <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet"> -->
-    <!-- Custom styles -->
-  	<!-- <link rel="stylesheet" href="css/fullcalendar.css"> -->
   	<link href="css/widgets.css" rel="stylesheet">
-      <link href="<?php echo base_url("assets/css/style.css"); ?>" rel="stylesheet">
-      <link href="<?php echo base_url("assets/css/style-responsive.css"); ?>" rel="stylesheet" />
-  	<!-- <link href="css/xcharts.min.css" rel=" stylesheet">	 -->
+    <link href="<?php echo base_url("assets/css/style.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/style-responsive.css"); ?>" rel="stylesheet" />
   	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     
   </head>
@@ -45,10 +33,6 @@
      
       
       <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-            </div>
-
             <!--logo start-->
             <a href="index.html" class="logo">Administrador</a>
             <!--logo end-->
@@ -62,17 +46,17 @@
               <ul class="sidebar-menu">                
                   <li class="active">
                       <a href="#">
-                          <span class="glyphicon glyphicon-user" aria-hidden="true">Añadir artista</span>
+                          <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
-				  <li class="active">
+				          <li class="active">
                       <a href="#">
-                          <span class="glyphicon glyphicon-music" aria-hidden="true">Añadir nueva canción</span>
+                          <span class="glyphicon glyphicon-music" aria-hidden="true"> Añadir canción</span>
                       </a>
                   </li>
                   <li class="active">
                       <a href="#">
-                          <span class="glyphicon glyphicon-plus" aria-hidden="true">Añadir sello</span>
+                          <span class="glyphicon glyphicon-plus" aria-hidden="true"> Añadir sello</span>
                       </a>
                   </li>
               </ul>
@@ -100,10 +84,10 @@
   <!-- container section start -->
 
     <!-- javascripts -->
-   <!-- <script src="js/jquery.js"></script>
-	<script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/jquery.js"></script>
+	  <script src="js/jquery-ui-1.10.4.min.js"></script>
     <script src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
     <!-- <script src="js/bootstrap.min.js"></script> -->
     <!-- nice scroll -->

@@ -86,11 +86,18 @@
             
             </div>
 
-        </div> 
+        </div>
+      
         <div class="col-md-12">
-	        <h2 id="sec1">ARTISTAS</h2>      
-	                <hr>
-	        <h2 id="sec2">ALBUMS</h2>
+        <hr>
+	        <h2 id="sec1">ARTISTAS</h2>       
+              <?= $this->session->Artistas ?>
+              <hr>
+        </div>
+
+        <div class="col-md-12">
+	        <h2 id="sec2">ALBUM</h2>
+               <?= $this->session->Album ?>
         </div>
     </div>        
 </div>

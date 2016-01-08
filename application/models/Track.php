@@ -18,12 +18,13 @@ class Track extends CI_Model {
     } 
 
     function topTen(){
-        $query = $this->db->query("SELECT cancion.nombre as track, artista.nombre as artista
-                                    FROM artista_cancion
+        $query = $this->db->query("SELECT cancion.img as img, cancion.nombre as track, 
+                                            sello.nombre as sello, artista.nombre as artista
+                                    FROM cancion
+                                    INNER JOIN sello
+                                    ON sello.id = cancion.id_sello
                                     INNER JOIN artista
-                                    ON artista.id = artista_cancion.id_artista
-                                    INNER JOIN cancion
-                                    ON cancion.id = artista_cancion.id_cancion
+                                    ON artista.id = cancion.id_artista
                                     ORDER BY cancion.likes ASC LIMIT 10"); 
         return $query;
     } 

@@ -56,13 +56,20 @@ header {
 }
 
 /* /cabecera */
-a.list-group-item.active{
+
+
+/*topten*/
+.list-group-head{
+    border-bottom: 1px solid #262626;
+}
+
+.list-group-item.active{
     font-size: 20px;
     color: #000 !important;
     background-color: #F7F72B !important;   
     border-color: #1C1C1F;
 }
-a.list-group-item.active:hover{
+.list-group-item.active:hover{
     color: #000 !important;
 }
 
@@ -71,10 +78,36 @@ a.list-group-item.active:hover{
     background-color: #1C1C1F;
 }
 
-a.list-group-item:hover, a.list-group-item:focus{
+.list-group-item:hover, .list-group-item:focus{
     color: #FFF !important;
     background-color: #2C2C2C;
 }
+
+.top-ten-num{
+    color: #8c8c8c;
+    font-size: 2em;
+    width: 20px;
+    padding: 0 20px;
+}
+.top-ten-track-title{
+    font: 700 1.077em/1.25 "SourceSans",Arial,sans-serif;
+    letter-spacing: .02em;
+    color: #fff;
+    height: 19px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.top-ten-track-artist{
+    font: 700 1em/1.25 "SourceSans",Arial,sans-serif;
+    letter-spacing: .02em;
+    color: #8c8c8c;
+    color: #39c1de !important;
+    height: 17px;
+    overflow-y: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*/topten*/
 
 /* nuevos tracks */
 .new-items-group{

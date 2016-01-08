@@ -3,7 +3,6 @@ class Escuchar extends MY_Controller {
   function __construct()
      {
        parent::__construct();
-       //$this->session;
        $this->load->helper(array('form'));
        $this->load->model('Artista_model','artista');
      }  

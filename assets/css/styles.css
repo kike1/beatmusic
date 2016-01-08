@@ -12,6 +12,12 @@ header {
 	margin-bottom:30px;
 }
 
+a.active{
+    border-bottom: solid 2px white;
+}
+a.list-group-item.active{
+    border-color: #F7F72B !important;
+}
 .modal-backdrop, .modal-backdrop.in{
   display: none;
 }
@@ -110,6 +116,12 @@ header {
 /*/topten*/
 
 /* nuevos tracks */
+a:hover{
+
+    color: #39c1de;
+    text-decoration: none !important;
+}
+
 .new-items-group{
     list-style:none;
     padding-left: 8px;
@@ -133,6 +145,15 @@ header {
     text-decoration: underline;
 }
 
+.glyphicon-heart{
+    float: right;
+    color: #FF53A0;
+    font-size: 30px;
+}
+
+.likes{
+    font-size: 14px;
+}
 /* / nuevos tracks */
 
 

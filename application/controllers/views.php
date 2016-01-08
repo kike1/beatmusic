@@ -3,20 +3,19 @@ class Views extends MY_Controller {
   function __construct()
  {
    parent::__construct();
-   //$this->session;
    $this->load->helper(array('form'));
+   $this->load->model('Track_model', 'track');
  }  
   public function index() {
 
     //newtracks
-    $this->load->model('Track');
-    $allTracks = $this->Track->getNewTracks();
+    $allTracks = $this->track->getNewTracks();
     $this->data["allTracks"] = $allTracks;
     $newitems = $this->load->view('layout/newitems', $this->data, true);
     $this->session->newitems = $newitems;
 
     //topten
-    $topTenResult = $this->Track->topTen();
+    $topTenResult = $this->track->topTen();
     $this->data["topten"] = $topTenResult;
     $topTen = $this->load->view('layout/topten', $this->data, true);
     $this->session->topTenItems = $topTen;

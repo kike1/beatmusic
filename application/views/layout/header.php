@@ -6,10 +6,10 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav" style="padding-left: 10px;">
         <li>
-          <a href="#">Tienda</a>
+          <a href="<?= base_url()?>" class="<?php if($this->uri->segment(1)==""){echo "active";}?>">Tienda</a>
         </li>
         <li>
-          <a href="<?= base_url()?>escuchar">Escuchar</a>
+          <a href="<?= base_url()?>escuchar" class="<?php if($this->uri->segment(1)=="escuchar"){echo "active";}?>">Escuchar</a>
         </li>
         
       </ul>

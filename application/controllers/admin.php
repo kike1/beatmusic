@@ -41,9 +41,9 @@ class Admin extends CI_Controller {
         	$img = $this->input->post('imagen');
       		$desc = $this->input->post('descripcion');
 
-        	$this->load->model('Artista');
+        	$this->load->model('Artista_model');
 
-        	if($this->Artista->crear_artista($nombre, $img, $desc)){
+        	if($this->Artista_model->crear_artista($nombre, $img, $desc)){
         		$this->session->errorlogin = false;
       			$this->session->set_flashdata('msg', 'Artista creado correctamente');
         	}else{
@@ -53,6 +53,10 @@ class Admin extends CI_Controller {
 
         	$this->load->view('admin_view');
         }
+	}
+
+	public function annadir_cancion(){
+		$this->load->view('annadir_cancion');
 	}
 }
 

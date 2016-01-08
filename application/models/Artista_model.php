@@ -50,5 +50,16 @@ class Artista_model extends CI_Model {
          return false;
        }
      }
+
+     function insertar_artista($nombre, $img, $descripcion){
+      $data = array (
+        'nombre' => $nombre,
+        'img' => $img,
+        'descripcion' => $descripcion
+      );
+
+      $this->db->insert('artista', $data);
+        return true;
+    }
 }
 ?>

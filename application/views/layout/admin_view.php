@@ -12,7 +12,7 @@
     <title>Administrador</title>
 
     <!-- Bootstrap CSS -->    
-   <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/styles.css"); ?>" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <!-- bootstrap theme -->
@@ -23,7 +23,8 @@
   	<link href="css/widgets.css" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/style.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/style-responsive.css"); ?>" rel="stylesheet" />
-  	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+  	<link href="assets/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+
     
   </head>
 

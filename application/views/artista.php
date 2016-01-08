@@ -41,18 +41,50 @@
                   </div>
                   <div class="col-md-10">
                     <h3><?=$track->nombre?></h3>
-                    <audio controls class="col-md-8">
-                        <source src="<?=base_url('assets/audio/'.$track->nombre.'.mp3')?>" type="audio/mpeg">
-                        Tu navegador no soporta la carga de audio mediante HTML5
-                    </audio>  
+                    <?php 
+                    if(file_exists('assets/audio/'.$track->nombre.'.mp3')) {?>
+                      <audio controls class="col-md-6">
+                          <source src="<?=base_url('assets/audio/'.$track->nombre.'.mp3')?>" type="audio/mpeg">
+                          Tu navegador no soporta la carga de audio mediante HTML5
+                      </audio>  
+              <?php }else{
+                        echo '<span class="col-md-6"> No hay archivo asociado a este track. </span>';
+                    } ?>
+
+                    <div class="col-md-3">
+                      <?php
+
+                      if(file_exists('assets/audio/'.$track->nombre.'.mp3')) {?>
+                            <a class="btn btn-small" href="<?=base_url('assets/audio/'.$track->nombre.'.mp3')?>" 
+                                download="<?= $track->nombre.'.mp3'; ?>">
+                                <i class="glyphicon glyphicon-download-alt col-md-3" style="font-size:18px;"> Descargar</i>
+                            </a>
+                      <?php }else {?>
+                            <a class="btn btn-small disabled" href="<?=base_url('assets/audio/'.$track->nombre.'.mp3')?>" 
+                                download="<?= $track->nombre.'.mp3'; ?>">
+                                <i class="glyphicon glyphicon-download-alt col-md-3" style="font-size:18px;"> Descargar</i>
+                            </a>
+                      <?php } ?>
+                    </div>
+                    <div class="col-md-3">
+                      <?php
+                       if($this->session->userdata('logged_in')){
+                        echo '<a class="col-md-3" href="/beatmusic/track/like/'.$track->id.'/'.$this->session->userdata['logged_in']['id'].'/'.$track->likes.'" 
+                                  data-toggle="tooltip" data-placement="right" title="Me gusta!">
+                            <span class="glyphicon glyphicon-heart"><span class="likes">'.$track->likes.'</span></span></a>';
+                      }else
+                        echo '<a class="col-md-3" href="" data-toggle="tooltip" data-placement="right" title="Logueate para votar!">
+                            <span class="glyphicon glyphicon-heart"><span class="likes">'.$track->likes.'</span></span></a>';
+                        ?>
+                    </div>  
                   </div> 
                   
                 </div>
                   <hr>
-              <?php }
-            }else{
-              echo '<p>'.$row->nombre.' no tiene canciones actualmente.' .'</p>';
-              }?>
+              <?php } ?>
+      <?php  }else{
+          echo '<p>'.$row->nombre.' no tiene canciones actualmente.' .'</p>';
+          }?>
     </div> 
   </div>     
 </div>

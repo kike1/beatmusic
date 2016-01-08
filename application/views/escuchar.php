@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 70px;">
     <div class="row">
 
-    <div class="col-md-9" id="leftCol">
+    <div class="col-md-7" id="leftCol">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
@@ -17,7 +17,7 @@
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="<?php echo base_url("assets/imgs/12951008.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/11.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>
@@ -35,7 +35,7 @@
                       </div>
                     </div>
                     <div class="item">
-                      <img src="<?php echo base_url("assets/imgs/12951012.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/12.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>
@@ -74,29 +74,31 @@
                 </div>
 </div> 
 
-        <div class="col-md-3">        
+        <div class="col-md-5">        
             <div class="list-group">
               <a href="#" class="list-group-item active">
                 NUEVO
               </a>
-              <div class="list-group"><img width="50" height="50" src="<?php echo base_url('assets/imgs/tracks/damian.jpg') ?>" class="img-responsive">DAMIAN & SKRILLEX<audio src="<?php echo base_url('assets/audio/1.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-              <div class="list-group"><img width="50" height="50" src="<?php echo base_url('assets/imgs/tracks/skrillex.jpg') ?>" class="img-responsive">SKRILLEX<audio src="<?php echo base_url('assets/audio/2.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-              <div class="list-group"><img width="50" height="50" src="<?php echo base_url('assets/imgs/.jpg') ?>" class="img-responsive">X<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-              <div class="list-group"><img width="50" height="50" src="<?php echo base_url('assets/imgs/.jpg') ?>" class="img-responsive">Y<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
+              <div class="list-group-item">DAMIAN & SKRILLEX<audio src="<?php echo base_url('assets/audio/1.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">SKRILLEX<audio src="<?php echo base_url('assets/audio/2.mp3') ?>" type="audio/mp3" controls  /></audio></div>
+              <div class="list-group-item">X<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
+              <div class="list-group-item">Y<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
             
             </div>
 
         </div>
       
-        <div class="col-md-12">
+        <div class="col-md-12 borde">
         <hr>
-	        <h2 id="sec1">ARTISTAS</h2>       
+	        <center><h2 id="sec1">ARTISTAS</h2></center>   
+          <hr>    
               <?= $this->session->Artistas ?>
-              <hr>
         </div>
 
-        <div class="col-md-12">
-	        <h2 id="sec2">ALBUM</h2>
+        <div class="col-md-12 borde">
+        <hr>
+	        <center><h2 id="sec2">ALBUM</h2></center>
+          <hr>
                <?= $this->session->Album ?>
         </div>
     </div>        

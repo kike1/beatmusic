@@ -1,6 +1,13 @@
+<div class="row">
+  <ul class="new-items-group">
 <?php
-    $i=0;
-    foreach ($getalbum->result() as $row){
-    echo ++$i.'. '.$row->nombre. '<br>';
-    }
-  ?>
+    foreach ($getalbum->result() as $row){?>
+    	<li class="item col-md-3">
+			<div class="item-info">
+    		<?php    echo $row->nombre.'<br>';
+    		echo '</div>
+    	</li>';
+    		}
+  			?>
+	</ul>
+</div>

@@ -26,7 +26,14 @@ class Admin extends CI_Controller {
 	}
 
 	public function insertar_artista(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png|mp3';
+		$config['max_size']	= '100';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+
 		$this->load->library('form_validation');
+		$this->load->library('upload', $config);
 
         $this->form_validation->set_rules('nombre', 'Nombre', 'required');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
@@ -37,21 +44,34 @@ class Admin extends CI_Controller {
         }
         else
         {
-        	$nombre = $this->input->post('nombre');
-        	$img = $this->input->post('imagen');
-      		$desc = $this->input->post('descripcion');
+        	if ( ! $this->upload->do_upload())
+			{
+				$error = array('error' => $this->upload->display_errors());
+				
+				$this->load->view('crear_artista', $error);
+			}	
+			else
+			{
+				$data = array('upload_data' => $this->upload->data());
+				
+				$this->load->view('upload_success', $data);
 
-        	$this->load->model('Artista_model');
+	        	$nombre = $this->input->post('nombre');
+	        	$img = $this->upload->data();
+	      		$desc = $this->input->post('descripcion');
 
-        	if($this->Artista_model->crear_artista($nombre, $img, $desc)){
-        		$this->session->errorlogin = false;
-      			$this->session->set_flashdata('msg', 'Artista creado correctamente');
-        	}else{
-        		$this->session->errorlogin = true;
-      			$this->session->set_flashdata('msg', 'Error...');
-        	}
+	        	$this->load->model('Artista_model');
 
-        	$this->load->view('admin_view');
+	        	if($this->Artista_model->crear_artista($nombre, $img['file_name'], $desc)){
+	        		$this->session->errorlogin = false;
+	      			$this->session->set_flashdata('msg', 'Artista creado correctamente');
+	        	}else{
+	        		$this->session->errorlogin = true;
+	      			$this->session->set_flashdata('msg', 'Error...');
+	        	}
+
+	        	$this->load->view('admin_view');
+	        }
         }
 	}
 

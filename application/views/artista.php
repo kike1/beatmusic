@@ -31,9 +31,9 @@
   <div class="row">
     <div class="col-md-12 artista-tracks">
       <h2> Tracks </h2>  
-        <? if($this->session->tracks) { ?>
+        <?php if($this->session->tracks) { ?>
             <hr>
-            <? foreach($this->session->tracks as $track){ ?>
+            <?php foreach($this->session->tracks as $track){ ?>
                 <div class="row info-track">
                   <div class="col-md-2">
                     <? $imgtrack = base_url('assets/imgs/tracks/'.$track->img.''); ?>

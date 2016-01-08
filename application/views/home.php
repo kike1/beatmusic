@@ -22,7 +22,7 @@
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                      <img src="<?php echo base_url("assets/imgs/12951008.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/12975130.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>
@@ -40,7 +40,7 @@
                       </div>
                     </div>
                     <div class="item">
-                      <img src="<?php echo base_url("assets/imgs/12951012.jpg"); ?>" alt="...">
+                      <img src="<?php echo base_url("assets/imgs/12975127.jpg"); ?>" alt="...">
                       <div class="carousel-caption">
                         ...
                       </div>
@@ -65,7 +65,7 @@
                     </div>
 
 
-                  </div>º
+                  </div>
 
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

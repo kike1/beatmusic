@@ -29,6 +29,7 @@ class VerifyLogin extends MY_Controller {
     $this->session->username = $this->input->post('username');
     $this->session->set_flashdata('msg', 'Logueado correctamente! Bienvenido '.$this->session->username);
 
+    
     $this->session->tipo = 'administrador';
    }
     $this->middle = 'home';

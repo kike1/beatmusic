@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2016 at 12:58 AM
+-- Generation Time: Jan 08, 2016 at 06:03 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -140,12 +140,12 @@ INSERT INTO `cancion` (`id`, `id_album`, `id_sello`, `id_artista`, `nombre`, `im
 (7, 2, 2, 4, 'mixtape 4', '12774914.jpg', 1, '2016-01-03 20:06:08'),
 (8, 2, 1, 3, 'Carry on', '12774914.jpg', 5, '2016-01-03 22:43:10'),
 (9, 3, 2, 4, 'Gotta love', '12774914.jpg', 55, '2016-01-03 22:43:10'),
-(10, 2, 1, 3, 'Into the wild', '12774914.jpg', 33, '2016-01-03 22:45:18'),
+(10, 2, 1, 3, 'Into the wild', '12774914.jpg', 2, '2016-01-03 22:45:18'),
 (11, 3, 2, 2, 'Feel Good', '12774914.jpg', 15, '2016-01-03 22:45:18'),
-(12, 1, 2, 1, 'Home', '12928683.jpg', 5, '2016-01-03 22:46:24'),
+(12, 1, 2, 1, 'Home', '12928683.jpg', 6, '2016-01-03 22:46:24'),
 (13, 1, 1, 1, 'Bring it back', '12928683.jpg', 7, '2016-01-03 22:46:24'),
-(14, 3, 1, 4, 'Home', '12928683.jpg', 22, '2016-01-03 22:46:40'),
-(15, 5, 2, 3, 'Bring it back', '12928683.jpg', 65, '2016-01-03 22:46:40');
+(14, 3, 1, 4, 'Home', '12928683.jpg', 24, '2016-01-03 22:46:40'),
+(15, 5, 2, 3, 'Bring it back', '12928683.jpg', 9, '2016-01-03 22:46:40');
 
 -- --------------------------------------------------------
 
@@ -182,17 +182,6 @@ CREATE TABLE `sello_artista` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipousuario`
---
-
-CREATE TABLE `tipousuario` (
-`id` int(11) NOT NULL,
-  `nombre` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `usuario`
 --
 
@@ -211,6 +200,25 @@ INSERT INTO `usuario` (`id`, `nick`, `password`, `tipo`) VALUES
 (1, 'kike', '066fc7b468bbf62055fe69a4f097de90', 'admin'),
 (3, 'kike1', 'bf2d0283ea146823ac357b2bb08b8ee6', 'usuario'),
 (4, 'kike2', 'f4d5af20f3f8ca890d997ebb5d9b6dcf', 'usuario');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario_likes`
+--
+
+CREATE TABLE `usuario_likes` (
+  `id_usuario` int(11) NOT NULL,
+  `id_cancion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usuario_likes`
+--
+
+INSERT INTO `usuario_likes` (`id_usuario`, `id_cancion`) VALUES
+(1, 14),
+(1, 15);
 
 --
 -- Indexes for dumped tables
@@ -259,16 +267,16 @@ ALTER TABLE `sello_artista`
  ADD PRIMARY KEY (`id_sello`,`id_artista`), ADD KEY `id_sello` (`id_sello`,`id_artista`), ADD KEY `id_artista` (`id_artista`);
 
 --
--- Indexes for table `tipousuario`
---
-ALTER TABLE `tipousuario`
- ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `usuario_likes`
+--
+ALTER TABLE `usuario_likes`
+ ADD PRIMARY KEY (`id_usuario`,`id_cancion`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -294,11 +302,6 @@ MODIFY `id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 ALTER TABLE `sello`
 MODIFY `id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `tipousuario`
---
-ALTER TABLE `tipousuario`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `usuario`
 --

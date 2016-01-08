@@ -29,13 +29,32 @@ class Track_model extends CI_Model {
         return $query;
     } 
 
-    function sumLike($id, $likes){
-        $data = array(
-           'likes' => $likes+1,
-        );
+    public function sumLike($idcancion,$idusuario,$likes){
+        $numl =  $likes+1;
 
-        $this->db->where('id', $id);
-        $this->db->update('cancion', $data); 
+        $this->db->select('*');
+        $this->db->from('usuario_likes');
+        $this->db->where('id_usuario', $idusuario);
+        $this->db->where('id_cancion', $idcancion);
+        $query = $this->db->get();
+
+        if($query->num_rows() == 1){
+            return false;
+        }else{
+            $data = array(
+               'id_usuario' => $idusuario ,
+               'id_cancion' => $idcancion
+            );
+            $this->db->insert('usuario_likes', $data); 
+
+            $dataup = array(
+               'likes' => $numl
+            );
+            $this->db->where('id', $idcancion);
+            $this->db->update('cancion', $dataup); 
+            return true;
+        }
+        
     }
 }
 ?>

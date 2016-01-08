@@ -8,8 +8,9 @@ class Track extends MY_Controller {
    $this->load->model('Track_model');
  }
 
- function like($id,$likes){
-    $this->Track_model->sumLike($id);
+ function like($idcancion,$idusuario,$likes){
+    $this->Track_model->sumLike($idcancion,$idusuario,$likes);
+    redirect('','refresh');
  }
 
 }

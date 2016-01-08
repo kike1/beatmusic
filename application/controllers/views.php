@@ -5,9 +5,9 @@ class Views extends MY_Controller {
    parent::__construct();
    $this->load->helper(array('form'));
    $this->load->model('Track_model', 'track');
+   $this->load->model('Usuario');
  }  
   public function index() {
-
     //newtracks
     $allTracks = $this->track->getNewTracks();
     $this->data["allTracks"] = $allTracks;

@@ -9,9 +9,9 @@ class Escuchar extends MY_Controller {
 
 
   public function index() {
-    $this->load->model('Artista');
+    $this->load->model('Artista_model');
 
-    $ArtistaResult = $this->Artista->getArtista();
+    $ArtistaResult = $this->Artista_model->getTodosArtista();
     $this->data["getartista"] = $ArtistaResult;
     $getArtista = $this->load->view('layout/getartista', $this->data, true);
     $this->session->Artistas = $getArtista;

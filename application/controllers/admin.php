@@ -56,7 +56,19 @@ class Admin extends CI_Controller {
 	}
 
 	public function annadir_cancion(){
-		$this->load->view('annadir_cancion');
+		$this->load->Model('Artista_model');
+		$this->load->Model('Album');
+
+		$artistasResult = $this->Artista_model->getTodosArtista();
+		$this->data["artistas"] = $artistasResult;
+		$albumResult = $this->Album->getAlbum();
+		$this->data["album"] = $albumResult;
+
+		$this->load->view('annadir_cancion',$this->data);
+	}
+
+	public function insertar_cancion(){
+
 	}
 }
 

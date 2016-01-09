@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2016 at 06:03 PM
+-- Generation Time: Jan 09, 2016 at 07:53 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -134,16 +134,16 @@ INSERT INTO `cancion` (`id`, `id_album`, `id_sello`, `id_artista`, `nombre`, `im
 (1, 1, 1, 1, 'prueba', '12680829.jpg', 1, '2016-01-02 23:00:00'),
 (2, 2, 1, 2, 'mixtape 2016', '12810518.jpg', 13, '0000-00-00 00:00:00'),
 (3, 2, 1, 3, 'mixtape vol. 2 2016', '12829906.jpg', 2, '0000-00-00 00:00:00'),
-(4, 1, 1, 4, 'Drake - Hotline Bling (192kbit)', '12680829.jpg', 2, '2016-01-03 20:05:27'),
-(5, 2, 2, 2, 'mixtape 3', '12844369.jpg', 4, '2016-01-03 20:05:27'),
+(4, 1, 1, 4, 'Drake - Hotline Bling (192kbit)', '12680829.jpg', 3, '2016-01-03 20:05:27'),
+(5, 2, 3, 2, 'mixtape 3', '12844369.jpg', 4, '2016-01-03 20:05:27'),
 (6, 1, 2, 1, 'prueba 3', '12853015.jpg', 2, '2016-01-03 20:06:08'),
 (7, 2, 2, 4, 'mixtape 4', '12774914.jpg', 1, '2016-01-03 20:06:08'),
 (8, 2, 1, 3, 'Carry on', '12774914.jpg', 5, '2016-01-03 22:43:10'),
-(9, 3, 2, 4, 'Gotta love', '12774914.jpg', 55, '2016-01-03 22:43:10'),
+(9, 3, 3, 4, 'Gotta love', '12774914.jpg', 55, '2016-01-03 22:43:10'),
 (10, 2, 1, 3, 'Into the wild', '12774914.jpg', 2, '2016-01-03 22:45:18'),
 (11, 3, 2, 2, 'Feel Good', '12774914.jpg', 15, '2016-01-03 22:45:18'),
-(12, 1, 2, 1, 'Home', '12928683.jpg', 6, '2016-01-03 22:46:24'),
-(13, 1, 1, 1, 'Bring it back', '12928683.jpg', 7, '2016-01-03 22:46:24'),
+(12, 1, 2, 1, 'Home', '12928683.jpg', 7, '2016-01-03 22:46:24'),
+(13, 1, 3, 1, 'Bring it back', '12928683.jpg', 7, '2016-01-03 22:46:24'),
 (14, 3, 1, 4, 'Home', '12928683.jpg', 24, '2016-01-03 22:46:40'),
 (15, 5, 2, 3, 'Bring it back', '12928683.jpg', 9, '2016-01-03 22:46:40');
 
@@ -158,7 +158,7 @@ CREATE TABLE `sello` (
   `nombre` varchar(512) NOT NULL,
   `img` varchar(512) NOT NULL,
   `descripcion` varchar(1024) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sello`
@@ -166,7 +166,8 @@ CREATE TABLE `sello` (
 
 INSERT INTO `sello` (`id`, `nombre`, `img`, `descripcion`) VALUES
 (1, 'Spinnin Records', 'spinnin.jpg', 'sello de música electrónica'),
-(2, 'Tylor Gang', 'tylor.jpg', 'sello de música hiphop');
+(2, 'Tylor Gang', 'tylor.jpg', 'sello de música hiphop'),
+(3, 'Doorn Records', 'doorn.jpg', 'Sander van Doorn , es un DJ y productor holandés de música trance, actualmente orientado al electro house. Se encuentra en el TOP 100 de la lista DJmag debutando el año 2006 en el número 32. En 2007 se ubicó en el puesto número 15. Ya en el 2008 en el puesto número 13 y en el 2009 en el puesto número 10 siendo su mejor performance en la encuesta.');
 
 -- --------------------------------------------------------
 
@@ -217,6 +218,8 @@ CREATE TABLE `usuario_likes` (
 --
 
 INSERT INTO `usuario_likes` (`id_usuario`, `id_cancion`) VALUES
+(1, 4),
+(1, 12),
 (1, 14),
 (1, 15);
 
@@ -301,7 +304,7 @@ MODIFY `id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 -- AUTO_INCREMENT for table `sello`
 --
 ALTER TABLE `sello`
-MODIFY `id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `usuario`
 --

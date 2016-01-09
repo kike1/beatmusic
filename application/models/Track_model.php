@@ -29,6 +29,15 @@ class Track_model extends CI_Model {
         return $query;
     } 
 
+    function featuredLabels(){
+        $query = $this->db->query("SELECT distinct(sello.nombre) as nombre, sello.img as imgsello
+                                    FROM cancion
+                                    INNER JOIN sello
+                                    ON sello.id = cancion.id_sello
+                                    ORDER BY cancion.likes DESC LIMIT 10"); 
+        return $query;
+    } 
+
     public function sumLike($idcancion,$idusuario,$likes){
         $numl =  $likes+1;
 

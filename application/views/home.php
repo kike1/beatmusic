@@ -78,22 +78,28 @@
                   </a>
                 </div>
               
-                <h2 id="sec1">¿Qué es BeatMusic?</h2>
+                <h2>¿Qué es BeatMusic?</h2>
                 <p>  
-              Es una aplicación para la asignatura de Programación Web del Grado de Ingeniería Informática de la UCA realizada con CodeIgniter.
-              Simula una tienda de música donde se puede escuchar y comprar música (de manera ficticia).
+                  Es una aplicación para la asignatura de Programación Web del Grado de Ingeniería Informática 
+                  de la UCA realizada con CodeIgniter.
+                  Simula una tienda de música donde se puede escuchar y comprar música (de manera ficticia).
                 </p>
             
 
                 <hr>
                 <!-- Nuevos tracks -->
-                <h2 id="sec2">Nuevo</h2>
-                <?= $this->session->newitems; ?>
+                <h2>Nuevos lanzamientos</h2>
+                <?= $newitems; ?>
+
+                <hr>
+                <!-- Albums destacados -->
+                <h2>Sellos destacados</h2>
+                <?= $featuredLabels; ?>
         </div> 
 
         <!-- TOP 10 -->
         <div class="col-md-3">        
-          <?= $this->session->topTenItems ?>
+          <?= $topTenItems ?>
         </div> 
     </div> 
             

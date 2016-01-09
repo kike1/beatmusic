@@ -161,6 +161,20 @@ a:hover{
 /* / nuevos tracks */
 
 
+/* sellos destacados*/
+a.featured-label-info{
+    color:white; 
+    text-align:center; 
+}
+.featured-label-img{
+    /*width: 250px; 
+    height: 250px;*/
+    margin-bottom: 10px;
+}
+.label-item{
+    border: white solid 10px;
+}
+/* / sellos destacados*/
 
 
 /*artista*/

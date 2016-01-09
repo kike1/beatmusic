@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav" style="float: right;">
         <li style="float: right;">
           <?php if($this->session->userdata('logged_in')) { 
-                    echo '<div style="margin-top:10px;">Hola, '.$this->session->username.'. </div><a name="logout" style="padding: 5px;" href="views/logout">Logout</a>';
+                    echo '<div style="margin-top:10px;">Hola, '.$this->session->username.'. </div><a name="logout" style="padding: 5px;" href="tienda/logout">Logout</a>';
                 }else{ ?>
                   <div style="padding-top:15px;">
                     <i class="glyphicon glyphicon-user"></i>

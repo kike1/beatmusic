@@ -30,9 +30,9 @@ class Escuchar extends MY_Controller {
    {
      $this->load->library('form_validation');
      $this->load->helper('security');
-
-     $this->session->artistav = $this->artista->getArtista($nombre);
-     $this->session->tracks = $this->artista->getTracks($nombre);
+    
+     $this->session->artistav = $this->artista->getArtista(urldecode($nombre));
+     $this->session->tracks = $this->artista->getTracks(urldecode($nombre));
 
      $this->middle = 'artista'; 
      $this->layout();

@@ -27,10 +27,7 @@ class Admin extends CI_Controller {
 
 	public function insertar_artista(){
 		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|png|mp3';
-		$config['max_size']	= '100';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
+		$config['allowed_types'] = '*';
 
 		$this->load->library('form_validation');
 		$this->load->library('upload', $config);
@@ -52,17 +49,13 @@ class Admin extends CI_Controller {
 			}	
 			else
 			{
-				$data = array('upload_data' => $this->upload->data());
-				
-				$this->load->view('upload_success', $data);
-
 	        	$nombre = $this->input->post('nombre');
 	        	$img = $this->upload->data();
 	      		$desc = $this->input->post('descripcion');
 
 	        	$this->load->model('Artista_model');
 
-	        	if($this->Artista_model->crear_artista($nombre, $img['file_name'], $desc)){
+	        	if($this->Artista_model->insertar_artista($nombre, $img['file_name'], $desc)){
 	        		$this->session->errorlogin = false;
 	      			$this->session->set_flashdata('msg', 'Artista creado correctamente');
 	        	}else{
@@ -78,17 +71,120 @@ class Admin extends CI_Controller {
 	public function annadir_cancion(){
 		$this->load->Model('Artista_model');
 		$this->load->Model('Album');
+		$this->load->Model('Sello_model');
 
 		$artistasResult = $this->Artista_model->getTodosArtista();
 		$this->data["artistas"] = $artistasResult;
 		$albumResult = $this->Album->getAlbum();
 		$this->data["album"] = $albumResult;
+		$sellosResult = $this->Sello_model->getSellos();
+		$this->data["sellos"] = $sellosResult;
 
 		$this->load->view('annadir_cancion',$this->data);
 	}
 
 	public function insertar_cancion(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
 
+		$this->load->library('form_validation');
+		$this->load->library('upload', $config);
+
+		$this->form_validation->set_rules('nombreCancion', 'nombreCancion', 'required');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+                $this->load->view('admin_view');
+        }
+        else
+        {
+        	if ( ! $this->upload->do_upload('userfile'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				
+				$this->load->view('annadir_cancion', $error);
+			}	
+			else
+			{
+
+	        	$artista = $this->input->post('artista');
+	        	$album = $this->input->post('album');
+	        	$sello = $this->input->post('sello');
+	        	$img = $this->upload->data();
+	      		$nombre = $this->input->post('nombreCancion');
+
+	        	$this->load->model('Track_model');
+
+	        	if($this->Track_model->insert_track($artista, $sello, $album, $nombre, $img['file_name'], 0)){
+	        		$this->session->errorlogin = false;
+	      			$this->session->set_flashdata('msg', 'Cancion insertada correctamente');
+	        	}else{
+	        		$this->session->errorlogin = true;
+	      			$this->session->set_flashdata('msg', 'Error...');
+	        	}
+	        }
+
+	        $config['upload_path'] = './uploads/cancionesSubidas/';
+            $config['allowed_types'] = '*';
+
+            // Cargamos la nueva configuración
+            $this->upload->initialize($config);
+
+	        if( ! $this->upload->do_upload('userfile1')){
+	        	$error = array('error' => $this->upload->display_errors());
+				
+				$this->load->view('annadir_cancion', $error);
+	        }else{
+	        	$this->load->view('admin_view');
+	        }
+        }
+	}
+
+	public function crear_sello(){
+		$this->load->view('crear_sello');
+	}
+
+	public function insertar_sello(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
+
+		$this->load->library('form_validation');
+		$this->load->library('upload', $config);
+
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+                $this->load->view('crear_sello');
+        }
+        else
+        {
+        	if ( ! $this->upload->do_upload())
+			{
+				$error = array('error' => $this->upload->display_errors());
+				
+				$this->load->view('crear_sello', $error);
+			}	
+			else
+			{
+	        	$nombre = $this->input->post('nombre');
+	        	$img = $this->upload->data();
+	      		$desc = $this->input->post('descripcion');
+
+	        	$this->load->model('Sello_model');
+
+	        	if($this->Sello_model->insertar_sello($nombre, $img['file_name'], $desc)){
+	        		$this->session->errorlogin = false;
+	      			$this->session->set_flashdata('msg', 'Sello creado correctamente');
+	        	}else{
+	        		$this->session->errorlogin = true;
+	      			$this->session->set_flashdata('msg', 'Error...');
+	        	}
+
+	        	$this->load->view('admin_view');
+	        }
+        }
 	}
 }
 

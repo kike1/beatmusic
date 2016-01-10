@@ -65,5 +65,19 @@ class Track_model extends CI_Model {
         }
         
     }
+
+    public function insert_track($artista, $sello, $album, $nombre, $img, $likes){
+        $data = array (
+        'id_album' => $album,
+        'id_sello' => $sello,
+        'id_artista' => $artista,
+        'nombre' => $nombre,
+        'img' => $img,
+        'likes' => $likes
+      );
+
+      $this->db->insert('cancion', $data);
+        return true;
+    }
 }
 ?>

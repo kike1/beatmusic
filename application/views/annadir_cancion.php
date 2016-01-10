@@ -84,7 +84,7 @@
                           Añadir canción
                       </header>
                       <div class="panel-body">
-                        <?php echo form_open('admin/insertar_cancion'); ?>
+                        <?php echo form_open_multipart('admin/insertar_cancion'); ?>
                           <form role="form">
                               <div class="form-group">
                                   <label for="Artista">Artista</label>
@@ -105,8 +105,26 @@
                                   </select>
                               </div>
                               <div class="form-group">
-                                  <label for="inputCancion">Canción</label>
-                                  <input type="file" id="insertarCancion" name="userfile">
+                                  <label for="Sello">Sello</label>
+                                  <select multiple class="form-control" name="sello">
+                                    <?php foreach ($sellos->result() as $row) {
+                                      echo '<option value="'.$row->id.'">'.$row->nombre.'</option>';
+                                    }
+                                    ?>
+                                  </select>
+                              </div>
+                              <div class="form-group">
+                                  <label for="Nombre">Nombre de la canción</label>
+                                  <input type="text" id="cnombre" name="nombreCancion" value="<?php echo set_value('nombreCancion'); ?>" class="form-control" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="inputImagen">Imagen de la canción</label>
+                                  <input type="file" id="insertarImagen" name="userfile">
+                                  <p class="help-block">Inserte la imagen de la canción.</p>
+                              </div>
+                              <div class="form-group">
+                                  <label for="inputCancion">Archivo canción</label>
+                                  <input type="file" id="insertarCancion" name="userfile1">
                                   <p class="help-block">Inserte la canción del artista.</p>
                               </div>
                               <button type="submit" class="btn btn-primary">Añadir</button>

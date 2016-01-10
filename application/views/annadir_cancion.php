@@ -33,7 +33,7 @@
       
       <header class="header dark-bg">
             <!--logo start-->
-            <a class="logo">añadir cancion</a>
+            <a href="<?php echo site_url('admin') ?>" class="logo">añadir cancion</a>
             <!--logo end-->
       </header>      
       <!--header end-->
@@ -44,17 +44,17 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li>
-                      <a class="" href="#">
+                      <a href="<?php echo site_url('admin/crear_artista') ?>">
                           <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
 				          <li>
-                      <a class="" href="#">
+                      <a class="" href="<?php echo site_url('admin/annadir_cancion') ?>">
                           <span class="glyphicon glyphicon-music" aria-hidden="true"> Añadir canción</span>
                       </a>
                   </li>
                   <li>
-                      <a class="" href="#">
+                      <a class="" href="<?php echo site_url('admin/crear_sello') ?>">
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"> Añadir sello</span>
                       </a>
                   </li>
@@ -88,7 +88,7 @@
                           <form role="form">
                               <div class="form-group">
                                   <label for="Artista">Artista</label>
-                                  <select multiple class="form-control" name="artista">
+                                  <select multiple class="form-control" name="artista" value="<?php echo set_value('artista'); ?>">
                                     <?php foreach ($artistas->result() as $row) {
                                       echo '<option value="'.$row->id.'">'.$row->nombre.'</option>';
                                     }
@@ -97,7 +97,7 @@
                               </div>
                               <div class="form-group">
                                   <label for="Album">Album</label>
-                                  <select multiple class="form-control" name="album">
+                                  <select multiple class="form-control" name="album" value="<?php echo set_value('album'); ?>">
                                     <?php foreach ($album->result() as $row) {
                                       echo '<option value="'.$row->id.'">'.$row->nombre.'</option>';
                                     }
@@ -106,7 +106,7 @@
                               </div>
                               <div class="form-group">
                                   <label for="Sello">Sello</label>
-                                  <select multiple class="form-control" name="sello">
+                                  <select multiple class="form-control" name="sello" value="<?php echo set_value('sello'); ?>">
                                     <?php foreach ($sellos->result() as $row) {
                                       echo '<option value="'.$row->id.'">'.$row->nombre.'</option>';
                                     }
@@ -122,11 +122,11 @@
                                   <input type="file" id="insertarImagen" name="userfile">
                                   <p class="help-block">Inserte la imagen de la canción.</p>
                               </div>
-                              <div class="form-group">
+                              <!--<div class="form-group">
                                   <label for="inputCancion">Archivo canción</label>
                                   <input type="file" id="insertarCancion" name="userfile1">
                                   <p class="help-block">Inserte la canción del artista.</p>
-                              </div>
+                              </div>-->
                               <button type="submit" class="btn btn-primary">Añadir</button>
                           </form>
                       </div>

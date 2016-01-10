@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Crear artista</title>
+    <title>Añadir canción</title>
 
     <!-- Bootstrap CSS -->    
     <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
@@ -33,18 +33,18 @@
       
       <header class="header dark-bg">
             <!--logo start-->
-            <a href="<?php echo site_url('admin') ?>" class="logo">Crear artista</a>
+            <a href="<?php echo site_url('admin') ?>" class="logo">añadir cancion</a>
             <!--logo end-->
       </header>      
       <!--header end-->
 
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse">
+          <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li>
-                      <a class="" href="<?php echo site_url('admin/crear_artista') ?>">
+                      <a href="<?php echo site_url('admin/crear_artista') ?>">
                           <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
@@ -69,10 +69,10 @@
         <section class="wrapper">
             <div class="row">
               <div class="col-lg-12">
-                <h3 class="page-header"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Crear artista</h3>
+                <h3 class="page-header"><i class="glyphicon glyphicon-music" aria-hidden="true"></i> Añadir canción</h3>
                   <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i>Administrador</li>
-                    <li><i class="glyphicon glyphicon-user" aria-hidden="true"></i>Crear artista</li>
+                    <li><i class="glyphicon glyphicon-music" aria-hidden="true"></i>Añadir canción</li>
                   </ol>
               </div>
             </div>
@@ -81,27 +81,18 @@
               <div class="col-lg-12">
                   <section class="panel">
                       <header class="panel-heading">
-                          Crear Artista.
+                          Ahora por favor, introduzca el archivo de la canción.
                       </header>
                       <div class="panel-body">
-                        <?php echo form_open_multipart('admin/insertar_artista'); ?>
+                        <?php echo form_open_multipart('admin/insertar_cancion2'); ?>
                           <form role="form">
                               <div class="form-group">
-                                  <label for="Nombre">Nombre</label>
-                                  <input type="text" id="cnombre" name="nombre" value="<?php echo set_value('nombre'); ?>" class="form-control" required>
+                                  <label for="inputCancion">Archivo canción</label>
+                                  <input type="file" id="insertarCancion" name="userfile">
+                                  <p class="help-block">Inserte la canción del artista.</p>
                               </div>
-                              <div class="form-group">
-                                  <label for="inputImagen">Imagen</label>
-                                  <input type="file" id="insertarImagen" name="userfile">
-                                  <p class="help-block">Inserte la imagen del artista.</p>
-                              </div>
-                              <div class="form-group">
-                                  <label for="Descripcion">Descripción</label>
-                                  <textarea class="form-control " id="cdescripcion" name="descripcion" value="<?php echo set_value('descripcion'); ?>" required></textarea>
-                              </div>
-                              <button type="submit" class="btn btn-primary">Crear</button>
+                              <button type="submit" class="btn btn-primary">Añadir</button>
                           </form>
-
                       </div>
                   </section>
               </div>

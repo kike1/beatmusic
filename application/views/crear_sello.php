@@ -33,7 +33,7 @@
       
       <header class="header dark-bg">
             <!--logo start-->
-            <a class="logo">Crear sello</a>
+            <a href="<?php echo site_url('admin') ?>" class="logo">Crear sello</a>
             <!--logo end-->
       </header>      
       <!--header end-->
@@ -44,17 +44,17 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li>
-                      <a class="" href="#">
+                      <a class="" href="<?php echo site_url('admin/crear_artista') ?>">
                           <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
 				          <li>
-                      <a class="" href="#">
+                      <a class="" href="<?php echo site_url('admin/annadir_cancion') ?>">
                           <span class="glyphicon glyphicon-music" aria-hidden="true"> Añadir canción</span>
                       </a>
                   </li>
                   <li>
-                      <a class="" href="#">
+                      <a class="" href="<?php echo site_url('admin/crear_sello') ?>">
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"> Añadir sello</span>
                       </a>
                   </li>

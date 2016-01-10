@@ -13,10 +13,12 @@ class Admin extends CI_Controller {
 	{
 		/*if($this->session->userdata('tipo') == FALSE || $this->session->tipo != 'administrador')
 		{
-			redirect(base_url().'login');
+			$this->load->view('login_view');
 		}*/
+
 		$data['titulo'] = 'Bienvenido Administrador';
 		$this->load->view('admin_view',$data);
+		
 	}
 
 	public function crear_artista(){
@@ -98,7 +100,7 @@ class Admin extends CI_Controller {
         }
         else
         {
-        	if ( ! $this->upload->do_upload('userfile'))
+        	if ( ! $this->upload->do_upload())
 			{
 				$error = array('error' => $this->upload->display_errors());
 				
@@ -122,19 +124,33 @@ class Admin extends CI_Controller {
 	        		$this->session->errorlogin = true;
 	      			$this->session->set_flashdata('msg', 'Error...');
 	        	}
+
+	        	$this->load->view('annadir_cancion2');
 	        }
+        }
+	}
 
-	        $config['upload_path'] = './uploads/cancionesSubidas/';
-            $config['allowed_types'] = '*';
+	public function insertar_cancion2(){
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
 
-            // Cargamos la nueva configuración
-            $this->upload->initialize($config);
+		$this->load->library('form_validation');
+		$this->load->library('upload', $config);
 
-	        if( ! $this->upload->do_upload('userfile1')){
-	        	$error = array('error' => $this->upload->display_errors());
+        if ($this->form_validation->run() == FALSE)
+        {
+                $this->load->view('admin_view');
+        }
+        else
+        {
+        	if ( ! $this->upload->do_upload())
+			{
+				$error = array('error' => $this->upload->display_errors());
 				
-				$this->load->view('annadir_cancion', $error);
-	        }else{
+				$this->load->view('annadir_cancion2', $error);
+			}	
+			else
+			{
 	        	$this->load->view('admin_view');
 	        }
         }

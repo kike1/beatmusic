@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +33,7 @@
       
       <header class="header dark-bg">
             <!--logo start-->
-            <a class="logo">Administrador</a>
+            <a href="<?php echo site_url('admin') ?>" class="logo">Administrador</a>
             <!--logo end-->
       </header>      
       <!--header end-->
@@ -45,17 +44,17 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li>
-                      <a href="<?= base_url()?>crear_artista">
+                      <a href="<?php echo site_url('admin/crear_artista') ?>">
                           <span class="glyphicon glyphicon-user" aria-hidden="true"> Añadir artista</span>
                       </a>
                   </li>
 				          <li>
-                      <a href="#">
+                      <a href="<?php echo site_url('admin/annadir_cancion') ?>">
                           <span class="glyphicon glyphicon-music" aria-hidden="true"> Añadir canción</span>
                       </a>
                   </li>
                   <li>
-                      <a href="#">
+                      <a href="<?php echo site_url('admin/crear_sello') ?>">
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"> Añadir sello</span>
                       </a>
                   </li>
@@ -124,53 +123,6 @@
 	<script src="js/charts.js"></script>
 	<script src="js/jquery.slimscroll.min.js"></script>-->
   <script>
-
- //      //knob
- //      $(function() {
- //        $(".knob").knob({
- //          'draw' : function () { 
- //            $(this.i).val(this.cv + '%')
- //          }
- //        })
- //      });
-
- //      //carousel
- //      $(document).ready(function() {
- //          $("#owl-slider").owlCarousel({
- //              navigation : true,
- //              slideSpeed : 300,
- //              paginationSpeed : 400,
- //              singleItem : true
-
- //          });
- //      });
-
- //      //custom select box
-
- //      $(function(){
- //          $('select.styled').customSelect();
- //      });
-	  
-	//   /* ---------- Map ---------- */
-	// $(function(){
-	//   $('#map').vectorMap({
-	//     map: 'world_mill_en',
-	//     series: {
-	//       regions: [{
-	//         values: gdpData,
-	//         scale: ['#000', '#000'],
-	//         normalizeFunction: 'polynomial'
-	//       }]
-	//     },
-	// 	backgroundColor: '#eef3f7',
-	//     onLabelShow: function(e, el, code){
-	//       el.html(el.html()+' (GDP - '+gdpData[code]+')');
-	//     }
-	//   });
-	// });
-
-
-
   </script>
 
   </body>

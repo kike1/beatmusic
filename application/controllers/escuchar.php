@@ -16,11 +16,11 @@ class Escuchar extends MY_Controller {
     $getArtista = $this->load->view('layout/getartista', $this->data, true);
     $this->session->Artistas = $getArtista;
 
-    $this->load->model('Album');
-    $AlbumResult = $this->Album->getAlbum();
-    $this->data["getalbum"] = $AlbumResult;
-    $getAlbum = $this->load->view('layout/getalbum', $this->data, true);
-    $this->session->Album = $getAlbum;
+    $this->load->model('Evento');
+    $EventoResult = $this->Evento->getEvento();
+    $this->data["getevento"] = $EventoResult;
+    $getEvento = $this->load->view('layout/getevento', $this->data, true);
+    $this->session->Evento = $getEvento;
 
     $this->middle = 'escuchar';
     $this->layout();
@@ -38,5 +38,4 @@ class Escuchar extends MY_Controller {
      $this->layout();
       
    }
-  
 }

@@ -88,18 +88,18 @@
 
         </div>
       
-        <div class="col-md-12 borde">
+        <div class="col-md-12">
         <hr>
 	        <center><h2 id="sec1">ARTISTAS</h2></center>   
           <hr>    
               <?= $this->session->Artistas ?>
         </div>
 
-        <div class="col-md-12 borde">
+        <div class="col-md-12">
         <hr>
-	        <center><h2 id="sec2">ALBUM</h2></center>
+	        <center><h2 id="sec2">PRÓXIMOS EVENTOS</h2></center>
           <hr>
-               <?= $this->session->Album ?>
+               <?= $this->session->Evento ?>
         </div>
     </div>        
 </div>

@@ -203,11 +203,3 @@ audio{
     float: right;
     width: 220px;
 }
-
-.borde{
-  margin-top: 25px;
-  display: block;  
-  border-color: gold;  
-  border-width: 2px;  
-  border-style: solid;   
-}

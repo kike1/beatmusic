@@ -36,7 +36,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function insertar_artista(){
-		$config['upload_path'] = './uploads/';
+		$config['upload_path'] = './assets/imgs/artistas/';
 		$config['allowed_types'] = '*';
 
 		$this->load->library('form_validation');
@@ -94,7 +94,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function insertar_cancion(){
-		$config['upload_path'] = './uploads/';
+		$config['upload_path'] = './assets/imgs/tracks/';
 		$config['allowed_types'] = '*';
 
 		$this->load->library('form_validation');
@@ -169,7 +169,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function insertar_sello(){
-		$config['upload_path'] = './uploads/';
+		$config['upload_path'] = './assets/imgs/sellos';
 		$config['allowed_types'] = '*';
 
 		$this->load->library('form_validation');

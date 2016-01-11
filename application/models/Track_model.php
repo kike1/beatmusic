@@ -25,7 +25,7 @@ class Track_model extends CI_Model {
                                     ON sello.id = cancion.id_sello
                                     INNER JOIN artista
                                     ON artista.id = cancion.id_artista
-                                    ORDER BY cancion.likes ASC LIMIT 10"); 
+                                    ORDER BY cancion.likes DESC LIMIT 10"); 
         return $query;
     } 
 

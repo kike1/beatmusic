@@ -20,7 +20,7 @@
                     <span class="glyphicon glyphicon-heart"><span class="likes">'.$row->likes.'</span></span></a>';
 
                echo '<a class="col-md-12" href=/beatmusic/escuchar/artista/'.urlencode($row->artista).'>'.$row->artista.'</a> <br>';
-               echo '<a class="col-md-12" href=/beatmusic/sello/'.urldecode($row->sello).'>'.$row->sello.'</a> <br>';
+               echo '<a class="col-md-12" href=/beatmusic/sello/'.urlencode($row->sello).'>'.$row->sello.'</a> <br>';
             echo '</div>';
           echo '</div>';
         echo '</li>';

@@ -7,14 +7,22 @@ class Admin extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->helper(array('form', 'url'));
+
+        $this->allowedToView();
 	}
 	
+    public function allowedToView(){
+        if($this->session->tipo != 'administrador')
+        {
+            $this->session->errorlogin = true;
+            $this->session->set_flashdata('msg', 'Tu cuenta no es de administrador. ¡Cómprate una!');
+            redirect(base_url());
+        }
+    }
+
 	public function index()
 	{
-		/*if($this->session->userdata('tipo') == FALSE || $this->session->tipo != 'administrador')
-		{
-			$this->load->view('login_view');
-		}*/
+		/**/
 
 		$data['titulo'] = 'Bienvenido Administrador';
 		$this->load->view('admin_view',$data);

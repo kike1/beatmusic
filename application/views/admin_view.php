@@ -37,7 +37,7 @@
             <!--logo end-->
       </header>      
       <!--header end-->
-
+      
       <!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
@@ -70,6 +70,12 @@
               <!--overview start-->
 			  <div class="row">
 				<div class="col-lg-12">
+          <?php
+          if($this->session->flashdata('msg'))
+          echo '<div class="alert alert-success">
+              '.$this->session->flashdata('msg').'
+          </div>';
+          ?>
 					<h3 class="page-header" style="text-align: center">Página principal del administrador</h3>
                     <p style="text-align: center">Por favor seleccione una opción del panel lateral.</p>
 				</div>

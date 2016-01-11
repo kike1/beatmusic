@@ -147,7 +147,9 @@ class Admin extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-                $this->load->view('admin_view');
+        	$this->session->errorlogin = false;
+	      	$this->session->set_flashdata('msg', 'Canción creada correctamente');
+            $this->load->view('admin_view');
         }
         else
         {

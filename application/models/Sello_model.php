@@ -10,6 +10,25 @@ class Sello_model extends CI_Model {
         return $query;
     }
 
+    function getSelloByName($nombre)
+     {
+       $this->db->select('*');
+       $this->db->from('sello');
+       $this->db->where('nombre', $nombre);
+       $this->db->limit(1);
+
+       $query = $this->db->get();
+
+       if($query->num_rows() == 1)
+       {
+         return $query->result();
+       }
+       else
+       {
+         return false;
+       }
+     }
+
     function insertar_sello($nombre, $img, $descripcion){
       $data = array (
         'nombre' => $nombre,

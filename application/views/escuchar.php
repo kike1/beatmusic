@@ -79,11 +79,15 @@
               <a href="#" class="list-group-item active">
                 NUEVO
               </a>
-              <div class="list-group-item">DAMIAN & SKRILLEX<audio src="<?php echo base_url('assets/audio/1.mp3') ?>" type="audio/mp3" controls  /></div>
-              <div class="list-group-item">SKRILLEX<audio src="<?php echo base_url('assets/audio/2.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-              <div class="list-group-item">X<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-              <div class="list-group-item">Y<audio src="<?php echo base_url('assets/audio/.mp3') ?>" type="audio/mp3" controls  /></audio></div>
-            
+              <div class="list-group-item">Damian & Skrillex<audio src="<?php echo base_url('assets/audio/damian.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Skrillex<audio src="<?php echo base_url('assets/audio/skrillex.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Dub Vision<audio src="<?php echo base_url('assets/audio/dubvision.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Tote King<audio src="<?php echo base_url('assets/audio/tote.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Wiz Khalifa<audio src="<?php echo base_url('assets/audio/wiz.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Tiesto<audio src="<?php echo base_url('assets/audio/tiesto.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Mixtape 4<audio src="<?php echo base_url('assets/audio/mixtape4.mp3') ?>" type="audio/mp3" controls  /></div>
+              <div class="list-group-item">Cedric Gervais<audio src="<?php echo base_url('assets/audio/gervais.mp3') ?>" type="audio/mp3" controls  /></div>
+
             </div>
 
         </div>

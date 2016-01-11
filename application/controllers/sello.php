@@ -14,7 +14,7 @@ class Sello extends MY_Controller {
      $this->load->library('form_validation');
      $this->load->helper('security');
     
-     $this->session->sellov = $this->sello->getSello(urldecode($nombre));
+     $this->session->sellov = $this->sello->getSelloByName(urldecode($nombre));
 
      $this->middle = 'sello'; 
      $this->layout();

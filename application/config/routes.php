@@ -52,3 +52,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'tienda/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['sello/(:any)'] = "sello/index/$1";

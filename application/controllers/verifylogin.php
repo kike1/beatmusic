@@ -5,7 +5,7 @@ class VerifyLogin extends MY_Controller {
  function __construct()
  {
    parent::__construct();
-   $this->load->model('Usuario','',TRUE);
+   $this->load->model('Usuario');
  }
 
  function index()
@@ -29,7 +29,10 @@ class VerifyLogin extends MY_Controller {
     $this->session->username = $this->input->post('username');
     $this->session->set_flashdata('msg', 'Logueado correctamente! Bienvenido '.$this->session->username);
 
-    $this->session->tipo = 'administrador';
+    $tip = $this->Usuario->getTipo($this->session->username);
+    foreach($tip->result() as $row){
+      $this->session->tipo = $row->tipo;
+    }
    }
     redirect(base_url());
     

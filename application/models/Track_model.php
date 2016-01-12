@@ -13,7 +13,7 @@ class Track_model extends CI_Model {
                                     ON sello.id = cancion.id_sello
                                     INNER JOIN artista
                                     ON artista.id = cancion.id_artista
-                                    ORDER BY cancion.fecha_creacion DESC LIMIT 10"); 
+                                    ORDER BY cancion.fecha_creacion DESC LIMIT 8"); 
         return $query;
     } 
 
@@ -51,7 +51,7 @@ class Track_model extends CI_Model {
             return false;
         }else{
             $data = array(
-               'id_usuario' => $idusuario ,
+               'id_usuario' => $idusuario,
                'id_cancion' => $idcancion
             );
             $this->db->insert('usuario_likes', $data); 

@@ -49,5 +49,23 @@ Class Usuario extends CI_Model
         return true;
      }
  }
+
+ function getTipo($nombre){
+   $this->db->select('tipo');
+     $this->db->from('usuario');
+     $this->db->where('nick', $nombre);
+     $this->db->limit(1);
+
+     $query = $this->db->get();
+
+     if($query->num_rows() == 1)
+     {
+       return $query;
+     }
+     else
+     {
+        return false;
+     }
+ }
 }
 ?>

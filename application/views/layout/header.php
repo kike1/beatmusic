@@ -6,7 +6,7 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav" style="padding-left: 10px;">
         <li>
-          <a href="<?= base_url()?>" class="<?php if($this->uri->segment(1)==""){echo "active";}?>">Tienda</a>
+          <a href="<?= base_url()?>" class="<?php if($this->uri->segment(1)==""){echo "active";}?>">Inicio</a>
         </li>
         <li>
           <a href="<?= base_url()?>escuchar" class="<?php if($this->uri->segment(1)=="escuchar"){echo "active";}?>">Escuchar</a>
@@ -15,8 +15,9 @@
       </ul>
       <ul class="nav navbar-nav" style="float: right;">
         <li style="float: right;">
-          <?php if($this->session->userdata('logged_in')) { 
-                    echo '<div><a href="'. base_url('admin'). '">Panel de administración</a></div>';
+          <?php if($this->session->userdata('logged_in')) {
+                    if($this->session->tipo == 'admin')
+                      echo '<div><a href="'. base_url('admin'). '">Panel de administración</a></div>';
                     echo '<div style="margin-top:10px; float:right;">Hola, '.$this->session->username.'. <a name="logout" style="padding: 5px;" href="tienda/logout">Salir</a></div>';
                     
                 }else{ ?>

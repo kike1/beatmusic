@@ -12,7 +12,7 @@ class Admin extends CI_Controller {
 	}
 	
     public function allowedToView(){
-        if($this->session->tipo != 'administrador')
+        if($this->session->tipo != 'admin')
         {
             $this->session->errorlogin = true;
             $this->session->set_flashdata('msg', 'Tu cuenta no es de administrador. ¡Cómprate una!');
